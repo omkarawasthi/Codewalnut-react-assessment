@@ -26,54 +26,58 @@ Your task is to improve and enhance an existing Timer App based on the following
 
    1. **Match the UI:**
       - Ensure the app's UI matches the given **screenshots**.
-      - <img width="250" alt="Screenshot 2024-12-03 at 8 30 53 PM" src="https://github.com/user-attachments/assets/59782304-c254-4d87-9fac-7f92c15bbc6f">
-      - <img width="250" alt="Screenshot 2024-12-03 at 3 29 25 PM" src="https://github.com/user-attachments/assets/9bb429ff-cd78-4411-b222-9d947c3ae79b">
-      - <img width="250" alt="Screenshot 2024-12-03 at 8 21 04 PM" src="https://github.com/user-attachments/assets/a26e8ec7-7e00-4964-8f61-651945f4bbd1">
-      - <img width="250" alt="Screenshot 2024-12-03 at 8 21 30 PM" src="https://github.com/user-attachments/assets/a513a462-540f-45e7-8ac0-0890995ec82d">
+        
+        ![Screenshot 2025-04-01 151244](https://github.com/user-attachments/assets/a25ef936-1a10-4e3f-8388-c2a725f7099f)
+
+        ![Screenshot 2025-04-01 171251](https://github.com/user-attachments/assets/f86097b3-6b22-44f0-86cd-dddbb009dbba)
+
+        ![Screenshot 2025-04-01 153135](https://github.com/user-attachments/assets/986a3015-2c05-41ea-bdf3-b8156d16a53e)
+
+        ![Screenshot 2025-04-01 165102](https://github.com/user-attachments/assets/cf9c368f-8012-4625-bd6d-eade21b1f9b5)
 
 
-   2. **Simultaneous Timers:**
+   3. **Simultaneous Timers:**
       - Update the app to allow multiple timers to run simultaneously (currently, only one timer runs at a time).
 
-   3. **Snack Bar Behavior:**
+   4. **Snack Bar Behavior:**
       - When a timer is completed:
         - A snack bar notification should display.
         - The notification sound should keep playing until the snack bar is dismissed.
 
-   4. **Fix Snack Bar Console Error:**
+   5. **Fix Snack Bar Console Error:**
       - Resolve the **console error** that occurs when the snack bar's **dismiss button** is clicked.
 
-   5. **Extract Common Components:**
+   6. **Extract Common Components:**
       - Extract the buttons in the **Add/Edit Timer Modal** as a **separate reusable component**.
       - Replace all instances of similar buttons in the app with this component.
 
-   6. **Consolidate Modal Code:**
+   7. **Consolidate Modal Code:**
       - Refactor the code to use a **single modal component** for both adding and editing timers, eliminating duplication.
 
-   7. **Validation Snack Bars:**
+   8. **Validation Snack Bars:**
       - Currently, the **Submit button** is disabled when the form is invalid.
       - Show an **error snack bar** or notification when the form is submitted with invalid data.
 
-   8. **Responsive Snack Bar Placement:**
+   9. **Responsive Snack Bar Placement:**
       - For **desktop devices**: Display snack bars in the **top-right corner**.
       - For **mobile devices**: Display snack bars at the **bottom of the screen**.
 
-   9. **Write Tests:**
+   10. **Write Tests:**
       - Add **unit tests** for the `validation.ts` file to ensure all validation rules work as expected.
       - Write **component tests** for reusable components like `TimerItem` and `ModalButtons`.
 
-   10. **Timer Persistence:**
+   11. **Timer Persistence:**
        - Use **localStorage** to persist timers across page refreshes.
 
-    11. **Use Google Font:**
+    12. **Use Google Font:**
        - Apply the **"Tinos"** font from [Google Fonts](https://fonts.google.com/specimen/Tinos) across the entire app for consistent typography.
 
-   12. **Add Favicon Icon:**
+   13. **Add Favicon Icon:**
        - Add a favicon to the app.
        - The icon is already present in the `public/icons` folder.
        - Ensure it displays correctly in browser tabs.
 
-    13. **Add Stopwatch Feature with Responsive Navigation:**
+    14. **Add Stopwatch Feature with Responsive Navigation:**
        - Implement a new **Stopwatch** feature accessible via a **tabbed navigation**:
          - Tab 1: **Timers** – Displays the current timer interface.
          - Tab 2: **Stopwatch** – Includes:
@@ -143,6 +147,7 @@ You will be evaluated on the following points:
 
 8. **Commit Messages:**
    - Follow **conventional commit standards** (e.g., `feat:`, `fix:`, `refactor:`).
+   - Practice committing after each change rather than committing everything at once.
 
 ---
 
