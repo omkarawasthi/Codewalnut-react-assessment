@@ -22,7 +22,7 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
     return (
       <button
         onClick={onRestart}
-        className="p-3 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
+        className="p-3 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors"
         title="Restart Timer"
       >
         <RotateCcw className="w-6 h-6" />

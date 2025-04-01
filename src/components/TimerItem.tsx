@@ -84,14 +84,14 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
             <div className="flex gap-2">
               <button
                 onClick={() => setIsEditModalOpen(true)}
-                className="p-2 rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
+                className="p-2 rounded-full hover:bg-green-50 text-green-500 transition-colors"
                 title="Edit Timer"
               >
                 <Pencil className="w-5 h-5" />
               </button>
               <button
                 onClick={handleRestart}
-                className="p-2 rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
+                className="p-2 rounded-full hover:bg-green-50 text-green-500 transition-colors"
                 title="Restart Timer"
               >
                 <RotateCcw className="w-5 h-5" />

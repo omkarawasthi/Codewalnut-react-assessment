@@ -51,11 +51,11 @@ const timerSlice = createSlice({
   },
 });
 
-const store = configureStore({
+const timerStore = configureStore({
   reducer: timerSlice.reducer,
 });
 
-export { store };
+export { timerStore };
 
 export const {
   addTimer,

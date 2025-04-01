@@ -65,6 +65,30 @@ Your task is to improve and enhance an existing Timer App based on the following
    10. **Timer Persistence:**
        - Use **localStorage** to persist timers across page refreshes.
 
+    11. **Use Google Font:**
+       - Apply the **"Tinos"** font from [Google Fonts](https://fonts.google.com/specimen/Tinos) across the entire app for consistent typography.
+
+   12. **Add Favicon Icon:**
+       - Add a favicon to the app.
+       - The icon is already present in the `public/icons` folder.
+       - Ensure it displays correctly in browser tabs.
+
+    13. **Add Stopwatch Feature with Responsive Navigation:**
+       - Implement a new **Stopwatch** feature accessible via a **tabbed navigation**:
+         - Tab 1: **Timers** – Displays the current timer interface.
+         - Tab 2: **Stopwatch** – Includes:
+           - **Start**, **Stop**, **Lap**, and **Restart** functionality.
+           - A list of **lap times** displayed below the stopwatch.
+       - On **mobile devices**, display the tab navigation as a **bottom navigation bar**.
+       - On **desktop devices**, position the navigation bar as a **sidebar on the left**, matching the design shown in the attached screenshots.
+
+      ![Screenshot 2025-04-01 133323](https://github.com/user-attachments/assets/fe09a047-b319-4517-9d2d-9550f7d95b9b)
+      ![Screenshot 2025-04-01 133402](https://github.com/user-attachments/assets/506d658c-60ff-410f-96e7-075e17cec1f0)
+      ![Screenshot 2025-04-01 133345](https://github.com/user-attachments/assets/574d49e1-2c4b-42f0-a62b-9ccfb1c543f7)
+      ![Screenshot 2025-04-01 134943](https://github.com/user-attachments/assets/b1f9b465-0d36-42d2-be67-3da73160bb43)
+
+
+
 ---
 
 ## **Project Setup**
