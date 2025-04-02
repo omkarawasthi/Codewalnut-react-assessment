@@ -13,8 +13,55 @@ Your task is to improve and enhance an existing Timer App based on the following
 - **Frontend Framework**: React (with Vite for fast development)
 - **Styling**: Tailwind CSS
 - **Testing Framework**: Vitest (for unit and component testing)
-
 ---
+
+## **Commit Messages and Tracking**
+- **Commit Often**: After each significant Feature or Change , commit your work.
+
+- **Conventional Commit Standards**: Use commit messages that follow these guidelines:
+
+   - **feat**: for new features (e.g., feat: add stopwatch lap functionality)
+
+   - **fix**: for bug fixes (e.g., fix: resolve snack bar dismiss error)
+
+   - **refactor**: for code refactoring (e.g., refactor: extract modal buttons into reusable component)
+
+   - **Tracking Changes**: Clear, descriptive commit messages are essential for tracking progress and understanding the history of your changes.
+ 
+
+### Stopwatch Feature 
+
+| Task                                                    | Marks |
+|---------------------------------------------------------|-------|
+| UI Matching                                             | 15    |
+| Functionality                                           | 28    |
+| Responsive Navigation & Layout (Mobile)                 | 7     |
+| Test Cases                                              | 10    |
+| **Total**                                               | **60**|
+
+### Timer Feature 
+
+| Task                               | Marks |
+|------------------------------------|-------|
+| Match the UI                       | 3     |
+| Simultaneous Timers                | 7     |
+| Snack Bar Behavior                 | 1     |
+| Fix Snack Bar Console Error        | 1     |
+| Extract Common Components          | 5     |
+| Consolidate Modal Code             | 5     |
+| Validation Snack Bars              | 1     |
+| Responsive Snack Bar Placement     | 1     |
+| Write Tests                        | 5     |
+| Timer Persistence                  | 10    |
+| Use Google Font                    | 0.5   |
+| Add Favicon Icon                   | 0.5   |
+| **Total**                          | **40**|
+
+
+### Bonus Points
+
+- For Conventional commits
+
 
 ## **Steps to Complete**
 
@@ -22,79 +69,96 @@ Your task is to improve and enhance an existing Timer App based on the following
    - Fork or clone the repository to your local machine.
    - Set up the project using the provided instructions.
 
-2. **Complete the Following Tasks:**
+2. **Complete the Following Tasks**
+      ### Stopwatch Feature (**Total Marks: 60**)
 
-   1. **Match the UI:**
+      1. **UI Matching : Marks 15**
+         - **Design Consistency:** The Stopwatch UI should match the provided design screenshots.
+         - **Component Styling:** Ensure that the layout, colors, fonts, and spacing are consistent with the Timer section.
+         - **Visual Feedback:** The stopwatch display and lap list should offer clear visual cues for start, stop, lap, and restart states.
+  
+     
+            ![Screenshot 2025-04-01 133323](https://github.com/user-attachments/assets/fe09a047-b319-4517-9d2d-9550f7d95b9b)
+            ![Screenshot 2025-04-01 133402](https://github.com/user-attachments/assets/506d658c-60ff-410f-96e7-075e17cec1f0)
+            ![Screenshot 2025-04-01 133345](https://github.com/user-attachments/assets/574d49e1-2c4b-42f0-a62b-9ccfb1c543f7)
+            ![Screenshot 2025-04-01 134943](https://github.com/user-attachments/assets/b1f9b465-0d36-42d2-be67-3da73160bb43)
+
+
+   2. **Functionality (28 Marks)**
+   - **Core Features : Marks 18**
+     - **Start & Stop:** Implement a seamless transition between starting and stopping the stopwatch.
+     - **Lap:** Allow users to record lap times. Display each lap with clear timing information.
+     - **Restart:** Provide a reset option that clears the stopwatch and lap times.
+   - **Additional Interactions : Marks 10**
+     - **Button Feedback:** Visual cues (e.g., button highlighting) should indicate active states.
+     - **Error Handling:** Ensure robust error handling for edge cases, such as multiple rapid clicks.
+
+   3. **Responsive Navigation & Layout (7 Marks)**
+   - **Mobile Devices: Marks 7**
+     - Implement the tab navigation as a bottom navigation bar.
+     - Ensure that the stopwatch and timer views are fully accessible and user-friendly on smaller screens.
+
+   4. **Test Cases (10 Marks)**
+   - **Unit Tests:**
+     - Write tests for individual stopwatch functions (e.g., start, stop, lap, restart) to ensure they work as expected.
+   - **Component Tests:**
+     - Write component tests that validate UI rendering, user interactions (clicks on buttons), and state updates.
+
+   ### Timer Feature (**Total Marks: 30** )
+ 
+   1. **Match the UI: Marks 3**
       - Ensure the app's UI matches the given **screenshots**.
         
         ![Screenshot 2025-04-01 151244](https://github.com/user-attachments/assets/a25ef936-1a10-4e3f-8388-c2a725f7099f)
 
         ![Screenshot 2025-04-01 171251](https://github.com/user-attachments/assets/f86097b3-6b22-44f0-86cd-dddbb009dbba)
 
-        ![Screenshot 2025-04-01 153135](https://github.com/user-attachments/assets/986a3015-2c05-41ea-bdf3-b8156d16a53e)
+        ![Screenshot 2025-04-02 161239](https://github.com/user-attachments/assets/d045cf45-7962-49a4-af8e-dc2d814d9950)
+
 
         ![Screenshot 2025-04-01 165102](https://github.com/user-attachments/assets/cf9c368f-8012-4625-bd6d-eade21b1f9b5)
 
 
-   3. **Simultaneous Timers:**
+   3. **Simultaneous Timers: Marks 7**
       - Update the app to allow multiple timers to run simultaneously (currently, only one timer runs at a time).
 
-   4. **Snack Bar Behavior:**
+   4. **Snack Bar Behavior: Marks 1**
       - When a timer is completed:
         - A snack bar notification should display.
         - The notification sound should keep playing until the snack bar is dismissed.
 
-   5. **Fix Snack Bar Console Error:**
+   5. **Fix Snack Bar Console Error: Marks 1**
       - Resolve the **console error** that occurs when the snack bar's **dismiss button** is clicked.
 
-   6. **Extract Common Components:**
+   6. **Extract Common Components: Marks 5**
       - Extract the buttons in the **Add/Edit Timer Modal** as a **separate reusable component**.
       - Replace all instances of similar buttons in the app with this component.
 
-   7. **Consolidate Modal Code:**
+   7. **Consolidate Modal Code: Marks 5**
       - Refactor the code to use a **single modal component** for both adding and editing timers, eliminating duplication.
 
-   8. **Validation Snack Bars:**
+   8. **Validation Snack Bars: Marks 1**
       - Currently, the **Submit button** is disabled when the form is invalid.
       - Show an **error snack bar** or notification when the form is submitted with invalid data.
 
-   9. **Responsive Snack Bar Placement:**
+   9. **Responsive Snack Bar Placement: Marks 1**
       - For **desktop devices**: Display snack bars in the **top-right corner**.
       - For **mobile devices**: Display snack bars at the **bottom of the screen**.
 
-   10. **Write Tests:**
+   10. **Write Tests: Marks 5**
       - Add **unit tests** for the `validation.ts` file to ensure all validation rules work as expected.
       - Write **component tests** for reusable components like `TimerItem` and `ModalButtons`.
 
-   11. **Timer Persistence:**
+   12. **Timer Persistence: Marks 10**
        - Use **localStorage** to persist timers across page refreshes.
 
-    12. **Use Google Font:**
+   13. **Use Google Font: Marks 0.5**
        - Apply the **"Tinos"** font from [Google Fonts](https://fonts.google.com/specimen/Tinos) across the entire app for consistent typography.
 
-   13. **Add Favicon Icon:**
+   14. **Add Favicon Icon: Marks 0.5**
        - Add a favicon to the app.
        - The icon is already present in the `public/icons` folder.
        - Ensure it displays correctly in browser tabs.
-
-    14. **Add Stopwatch Feature with Responsive Navigation:**
-       - Implement a new **Stopwatch** feature accessible via a **tabbed navigation**:
-         - Tab 1: **Timers** – Displays the current timer interface.
-         - Tab 2: **Stopwatch** – Includes:
-           - **Start**, **Stop**, **Lap**, and **Restart** functionality.
-           - A list of **lap times** displayed below the stopwatch.
-       - On **mobile devices**, display the tab navigation as a **bottom navigation bar**.
-       - On **desktop devices**, position the navigation bar as a **sidebar on the left**, matching the design shown in the attached screenshots.
-
-      ![Screenshot 2025-04-01 133323](https://github.com/user-attachments/assets/fe09a047-b319-4517-9d2d-9550f7d95b9b)
-      ![Screenshot 2025-04-01 133402](https://github.com/user-attachments/assets/506d658c-60ff-410f-96e7-075e17cec1f0)
-      ![Screenshot 2025-04-01 133345](https://github.com/user-attachments/assets/574d49e1-2c4b-42f0-a62b-9ccfb1c543f7)
-      ![Screenshot 2025-04-01 134943](https://github.com/user-attachments/assets/b1f9b465-0d36-42d2-be67-3da73160bb43)
-
-
-
----
-
 ## **Project Setup**
 
 1. Clone the repository:  
