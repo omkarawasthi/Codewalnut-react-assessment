@@ -1,7 +1,6 @@
-// StopWatch.tsx
 import { useState } from 'react';
 import { StopWatchTimer } from './StopWatchTImer';
-import "./Style.css";
+
 
 const Stopwatch: React.FC = () => {
     const [timers] = useState([
@@ -20,7 +19,7 @@ const Stopwatch: React.FC = () => {
         <div className="stopwatch-container">
             {timers.map((timer) => (
                 <div key={timer.id} className="stopwatch-card">
-                    <StopWatchTimer timer={timer} />
+                    <StopWatchTimer />
                 </div>
             ))}
         </div>

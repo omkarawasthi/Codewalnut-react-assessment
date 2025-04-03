@@ -9,17 +9,17 @@ export const TimerList: React.FC = () => {
   return (
     <div className="space-y-4 min-h-[400px]">
       {timers.length === 0 ? (
-        <div className="h-[400px] flex flex-col items-center justify-center">
+        <div className="h-[400px] flex flex-col items-center justify-center px-4">
           <EmptyState />
-          <p className="text-center text-gray-500 text-xl font-medium">
+          <p className="text-center text-gray-500 text-lg md:text-xl font-medium">
             No timers yet. Add one to get started!
           </p>
-          <p className="text-center text-gray-400 mt-2">
+          <p className="text-center text-gray-400 mt-2 text-sm md:text-base">
             Click the "Add Timer" button above to create your first timer.
           </p>
         </div>
       ) : (
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {timers.map((timer) => (
             <TimerItem key={timer.id} timer={timer} />
           ))}

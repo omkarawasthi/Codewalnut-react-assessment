@@ -4,6 +4,7 @@ import { formatTime } from '../utils/time';
 import { TimerControls } from './TimerControls';
 import { TimerProgress } from './TimerProgress';
 
+
 export const StopWatchTimer: React.FC = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
@@ -37,62 +38,63 @@ export const StopWatchTimer: React.FC = () => {
   };
 
   return (
-    <div className="relative flex flex-col left-[358px] top-[100px] bg-white rounded-xl shadow-lg w-[400px] p-6 transition-transform hover:scale-102 overflow-hidden">
-      <div className="flex flex-col items-center mt-6">
-        <div className="text-4xl font-mono font-bold text-gray-800 mb-4">
+    <div className="relative stopwatch-card bg-white md:top-[30px] md:left-[370px] mx-auto md:mx-0 rounded-xl shadow-lg w-full md:w-[400px] p-4 md:p-6 transition-transform hover:scale-102 overflow-hidden">
+      <div className="flex flex-col items-center mt-4 md:mt-6">
+        <div className="text-3xl md:text-4xl font-mono font-bold text-gray-800 mb-4">
           {formatTime(elapsedTime)}
         </div>
 
-        <TimerProgress progress={0} /> {/* No progress needed for stopwatch mode */}
+        <TimerProgress progress={0} />
 
-        <div className="flex gap-4 mt-4">
+        <div className="flex stopwatch-buttons gap-3 md:gap-5 mt-4">
           <TimerControls
             isRunning={isRunning}
             remainingTime={elapsedTime}
-            duration={0} // Stopwatch has no fixed duration
+            duration={0}
             onToggle={handleToggle}
             onRestart={handleReset}
           />
-
           <button
             onClick={handleLap}
-            className="p-2 rounded-lg hover:bg-blue-50 bg-[#f3f4f6] text-blue-500 transition-colors"
+            className="flex items-center p-2 hover:cursor-pointer rounded-full w-10 md:w-12 hover:bg-blue-50 bg-[#f3f4f6] text-blue-500 transition-colors"
             title="Add Lap"
             disabled={!isRunning}
           >
-            <Flag className="w-5 h-5" />
+            <Flag className="w-6 h-6 md:w-7 relative left-[3px]  md:h-7" />
           </button>
-
           <button
             onClick={handleReset}
-            className="p-2 rounded-full hover:bg-green-50 bg-[#f3f4f6] transition-colors"
+            className="p-2 rounded-full w-10 md:w-12 hover:bg-green-50 bg-[#f3f4f6] transition-colors"
             title="Reset Timer"
           >
-            <RotateCcw className="w-5 h-5" />
+            <RotateCcw className="w-6 h-6 md:w-7 relative left-[2px] hover:cursor-pointer md:h-7" />
           </button>
         </div>
 
         {laps.length > 0 && (
-          <table className="mt-4 border w-full text-center">
-            <thead>
-              <tr>
-                <th>Lap</th>
-                <th>Split Time</th>
-                <th>Total Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              {laps.map((lap, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{formatTime(index === 0 ? lap : lap - laps[index - 1])}</td>
-                  <td>{formatTime(lap)}</td>
+          <div className="w-full overflow-x-auto mt-4">
+            <table className="border stopwatch-lap-table w-full min-w-[300px]">
+              <thead>
+                <tr>
+                  <th className="text-sm md:text-base">Lap</th>
+                  <th className="text-sm md:text-base">Split Time</th>
+                  <th className="text-sm md:text-base">Total Time</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {laps.map((lap, index) => (
+                  <tr key={index} className='mx-2'>
+                    <td className="text-sm md:text-base">{index + 1}</td>
+                    <td className="text-sm md:text-base">{formatTime(index === 0 ? lap : lap - laps[index - 1])}</td>
+                    <td className="text-sm md:text-base">{formatTime(lap)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>
   );
+  
 };
