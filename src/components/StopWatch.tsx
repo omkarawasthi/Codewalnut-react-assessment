@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StopWatchTimer } from './StopWatchTImer';
+import { StopWatchTimer } from './StopWatchTimer';
 
 
 const Stopwatch: React.FC = () => {
