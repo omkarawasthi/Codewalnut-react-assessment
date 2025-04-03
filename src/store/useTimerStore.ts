@@ -1,9 +1,23 @@
+// store/useTimerStore.ts
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { Timer } from '../types/timer';
 
+const LOCAL_STORAGE_KEY = 'timers';
+
+// Load initial state from localStorage
+const loadInitialState = () => {
+  try {
+    const storedTimers = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return storedTimers ? JSON.parse(storedTimers) : [];
+  } catch (error) {
+    console.error('Error loading timers from localStorage:', error);
+    return [];
+  }
+};
+
 const initialState = {
-  timers: [] as Timer[],
+  timers: loadInitialState() as Timer[],
 };
 
 const timerSlice = createSlice({
@@ -21,15 +35,23 @@ const timerSlice = createSlice({
       state.timers = state.timers.filter(timer => timer.id !== action.payload);
     },
     toggleTimer: (state, action) => {
-      const timer = state.timers.find(timer => timer.id === action.payload);
+      const timer = state.timers.find((timer) => timer.id === action.payload);
       if (timer) {
+        const wasRunning = timer.isRunning;
         timer.isRunning = !timer.isRunning;
+
+        // If any one timer was just started, stop all other timers.
+        if (!wasRunning) {
+          state.timers.forEach((other) => {
+            if (other.id !== action.payload) other.isRunning = false;
+          });
+        }
       }
     },
     updateTimer: (state, action) => {
       const timer = state.timers.find(timer => timer.id === action.payload);
       if (timer && timer.isRunning) {
-        timer.remainingTime -= 1;
+        timer.remainingTime = Math.max(0, timer.remainingTime - 1);
         timer.isRunning = timer.remainingTime > 0;
       }
     },
@@ -51,8 +73,23 @@ const timerSlice = createSlice({
   },
 });
 
+// localStorage middleware
+const localStorageMiddleware = (store) => (next) => (action) => {
+  const result = next(action);
+  if (action.type.startsWith('timer/')) {
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(store.getState().timers));
+    } catch (error) {
+      console.error('Error saving timers:', error);
+    }
+  }
+  return result;
+};
+
 const timerStore = configureStore({
   reducer: timerSlice.reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(localStorageMiddleware),
 });
 
 export { timerStore };
