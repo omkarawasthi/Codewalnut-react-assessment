@@ -16,8 +16,9 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
   onToggle,
   onRestart,
 }) => {
-  const isCompleted = remainingTime <= 0;
-  
+  const isStopwatchMode = duration === 0; // Stopwatch mode when duration is 0
+  const isCompleted = !isStopwatchMode && remainingTime <= 0; // Only applies to countdown timers
+
   if (isCompleted) {
     return (
       <button
@@ -40,11 +41,7 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
       }`}
       title={isRunning ? 'Pause Timer' : 'Start Timer'}
     >
-      {isRunning ? (
-        <Pause className="w-6 h-6" />
-      ) : (
-        <Play className="w-6 h-6" />
-      )}
+      {isRunning ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
     </button>
   );
 };
