@@ -5,8 +5,5 @@ export const formatTime = (seconds: number): string => {
 
   const pad = (num: number): string => num.toString().padStart(2, '0');
 
-  if (hours > 0) {
-    return `${pad(hours)}:${pad(minutes)}:${pad(remainingSeconds)}`;
-  }
-  return `${pad(minutes)}:${pad(remainingSeconds)}`;
+  return `${pad(hours)}:${pad(minutes)}.${pad(remainingSeconds)}`;
 };
